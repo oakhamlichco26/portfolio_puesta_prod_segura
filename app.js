@@ -9,19 +9,10 @@ const activities = {
 
 // 2) Entradas del timeline: añade las tuyas aquí
 const entries = [
-  { date: "2026-10-02", activity: "frontend", title: "Calculadora",
-    text: "Calculadora básica con JavaScript.",
-    demo: "ejercicios/ejercicio-01/index.html",
-    repo: "https://github.com/tu-usuario/tu-repo/tree/main/ejercicios/ejercicio-01" },
-  { date: "2026-09-20", activity: "backend", title: "API REST de tareas",
-    text: "CRUD con autenticación básica.",
-    repo: "https://github.com/tu-usuario/api-tareas" },
-  { date: "2026-03-05", activity: "algoritmos", title: "Ordenación y búsqueda",
-    text: "Quicksort y búsqueda binaria.",
-    repo: "https://github.com/tu-usuario/algoritmos" },
-  { date: "2025-11-12", activity: "cloud", title: "Pipeline CI/CD",
-    text: "Despliegue automático con GitHub Actions.",
-    repo: "https://github.com/tu-usuario/ci-cd-demo" }
+  { date: "-", activity: "-", title: "-",
+    text: "Proximamente",
+    demo: "",
+    repo: "" },
 ];
 
 const menu = document.getElementById("menu");

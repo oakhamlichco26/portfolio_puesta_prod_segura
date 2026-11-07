@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none';">
+<meta name="referrer" content="no-referrer">
+<title>GIT Ariketa 5.1.2 — Portfolio · Puesta en Producción Segura</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<div class="wrapper">
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-wrap">
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false"
+            aria-controls="menu-list" aria-label="Abrir menú de ejercicios">☰</button>
+    <div class="brand">
+      <a href="../index.html">Portfolio</a>
+      <div class="brand-sub">Puesta en Producción Segura · Omar Akhamlich Cotado</div>
+    </div>
+    <nav id="menu-list"><ul><li><a href="ejercicio-01.html" data-ex="ejercicio-01">GIT Ariketa 5.1.1</a></li><li><a href="ejercicio-02.html" data-ex="ejercicio-02" class="active">GIT Ariketa 5.1.2</a></li><li><a href="ejercicio-03.html" data-ex="ejercicio-03">GIT Ariketa 5.1.3</a></li><li><a href="ejercicio-04.html" data-ex="ejercicio-04">GIT Ariketa 5.1.4 · Reto colaborativo</a></li><li><a href="ejercicio-05.html" data-ex="ejercicio-05">OWASP Top 10 · Tarea 1 (Sesión 1)</a></li><li><a href="ejercicio-06.html" data-ex="ejercicio-06">ASVS de OWASP · Aplicación a una aplicación web</a></li><li><a href="ejercicio-07.html" data-ex="ejercicio-07">Recurso de audio · Protege tu código de dependencias vulnerables</a></li><li><a href="ejercicio-08.html" data-ex="ejercicio-08">Práctica Docker 1 · Nginx e imagen Node.js</a></li></ul></nav>
+    <div class="theme-wrap">
+      <button class="theme-toggle" id="theme-toggle" aria-pressed="false"
+              aria-label="Cambiar entre tema claro y oscuro">🌓</button>
+    </div>
+  </div>
+</aside>
+
+<main id="contenido" tabindex="-1">
+  <header class="exercise-header"><div class="ej-meta"><span class="badge">Ejercicio 02</span><span class="source">Fuente: Ariketa_5.1.2_v2.docx</span></div><h1>GIT Ariketa 5.1.2</h1><p class="lead">Contenido completo del documento original del ejercicio.</p></header>
+  <p>GIT Ariketa 5.1.2</p>
+<p>Crea la carpeta ariketa5.1.2-tuNombreApellido (ej: ariketa5.1.2-IgorGoikoetxea) y conviértela en un repositorio de Git.</p>
+<p>Git init</p>
+<p>Crea dos ficheros: servidor.txt y seguridad.txt. Escribe "Servidor activo" y "Reglas de firewall" respectivamente dentro de cada uno.</p>
+<p>Haz un commit con el mensaje: "Estado inicial del sistema".</p>
+<p><img src="../assets/img/ejercicio-02/ej-02-01.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Crea dos ramas sin cambiarte a ellas todavía: desarrollo y hotfix.</p>
+<p><img src="../assets/img/ejercicio-02/ej-02-02.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Salta a la rama desarrollo, crea un nuevo fichero llamado mfa.txt, escribe dentro "Autenticacion de doble factor" y haz un commit con el mensaje: "Añadido modulo MFA".</p>
+<p><img src="../assets/img/ejercicio-02/ej-02-03.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Desde la rama desarrollo, crea y salta en un solo comando a una tercera rama llamada experimental.</p>
+<p><img src="../assets/img/ejercicio-02/ej-02-04.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Modifica el archivo servidor.txt añadiendo al final la frase " - Modo Pruebas" y haz un commit con el mensaje: "Servidor en modo pruebas".</p>
+<p><img src="../assets/img/ejercicio-02/ej-02-05.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Salta de nuevo a la rama desarrollo y abre el archivo servidor.txt. ¿Aparece la frase " - Modo Pruebas"? ¿Por qué?</p>
+<p>La frase no sale en la rama de desarrollo, ya que este cambio se hizo en una distinta llamada experimental.<img src="../assets/img/ejercicio-02/ej-02-06.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Desde la rama desarrollo, haz un merge con la rama experimental.</p>
+<p><img src="../assets/img/ejercicio-02/ej-02-07.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Borra la rama experimental y comprueba con un comando de listado que se ha eliminado correctamente.</p>
+<p><img src="../assets/img/ejercicio-02/ej-02-08.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Salta a la rama hotfix. Modifica la línea de servidor.txt para que ponga: "Servidor en mantenimiento urgente" y haz commit con el mensaje: "Parche urgente en servidor".</p>
+<p><img src="../assets/img/ejercicio-02/ej-02-09.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Salta a la rama main (o master). Modifica la misma línea de servidor.txt para que ponga: "Servidor actualizado v2.0" y haz commit con el mensaje: "Actualizacion v2.0".</p>
+<p><img src="../assets/img/ejercicio-02/ej-02-10.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Desde la rama main, intenta hacer un merge con la rama hotfix. ¿Qué ha pasado en la consola?</p>
+<p><img src="../assets/img/ejercicio-02/ej-02-11.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>La consola detecta cambios en ambas ramas, generando conflicto. </p>
+<p>Abre el archivo servidor.txt. ¿Qué símbolos raros ha añadido Git y qué significa cada bloque?</p>
+<p><img src="../assets/img/ejercicio-02/ej-02-12.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>En el archivo git diferencia cambios de cada rama con los siguientes simbolos &lt; = &gt; Asi el usuario puede saber de donde viene cada cambio, y decidir con que quedarse.</p>
+<p>Resuelve el conflicto editando el archivo para que la línea final sea: "Servidor en mantenimiento v2.0".</p>
+<p><img src="../assets/img/ejercicio-02/ej-02-13.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Intenta hacer git commit directamente sin ejecutar git add. ¿Qué te advierte Git?</p>
+<p>Git te advierte de que hay conflictos aun sin resolver, por lo que no puedes aun hacer commit hasta resolverlo.</p>
+<p>Ejecuta los comandos necesarios para marcar el conflicto como resuelto y completar el commit de merge.</p>
+<p><img src="../assets/img/ejercicio-02/ej-02-14.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Muestra el historial gráfico de commits en una sola línea para comprobar cómo ha quedado el árbol del repositorio.</p>
+<p><img src="../assets/img/ejercicio-02/ej-02-15.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p><strong>Extra</strong></p>
+<p>Estando en la rama desarrollo, empieza a escribir una línea en seguridad.txt pero no hagas commit.</p>
+<p><img src="../assets/img/ejercicio-02/ej-02-16.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Simula una emergencia: intenta saltar a main. Git te bloqueará por tener cambios pendientes. ¿O no?</p>
+<p>Depenediendo la configuracion de GIT, este te dejara cambiar de rama o no. PRo buenas practicas, Git suele denegar la opcion de cambiar de rama con cambios pendientes. Sin embargo, ciertos IDEs suelen permitir este cambio de rama, siempre haciendole saber a el usuario que tiene cambios pendientes que arrastrarar a la nueva rama, ofreciendo la opcion de git stash.</p>
+<p>Ejecuta git stash para pausar el trabajo, salta a main para verificar algo rápido y vuelve a desarrollo.</p>
+<p>git stash</p>
+<p>Recupera tu trabajo con git stash pop.</p>
+<p><img src="../assets/img/ejercicio-02/ej-02-17.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Comete un error intencionado en un commit (por ejemplo meter una clave o alguo similar en texto plano en un fichero para probat algo rápido) y deshazlo usando git revert HEAD para observar cómo queda registrado el despiste en git log.</p>
+<p><img src="../assets/img/ejercicio-02/ej-02-18.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Explica con tus propias palabras para que han servido:</p>
+<p>git stash: Es como una captura del momento con todos los cambios pendientes. Sirve para guardar cambios sin querer commitearlos</p>
+<p>git stash pop: Revierte el git stash, devolviendote todos los cambios capturados tras el git stash</p>
+<p>git revert HEAD: Revierte el ultimo commit hecho en la rama correspondiente.</p>
+  <nav class="nav-prev-next" aria-label="Navegación entre ejercicios"><a href="ejercicio-01.html" class="nav-link nav-prev">← Anterior: GIT Ariketa 5.1.1</a><span class="nav-sep">·</span><a href="ejercicio-03.html" class="nav-link nav-next">Siguiente: GIT Ariketa 5.1.3 →</a></nav>
+</main>
+</div>
+
+<footer class="site-footer">
+  <p>Sitio 100 % estático generado con <code>build.py</code>. HTML, CSS y JS vanilla,
+  sin dependencias externas ni CDNs.</p>
+</footer>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

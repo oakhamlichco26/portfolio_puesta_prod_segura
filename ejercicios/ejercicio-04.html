@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none';">
+<meta name="referrer" content="no-referrer">
+<title>GIT Ariketa 5.1.4 · Reto colaborativo — Portfolio · Puesta en Producción Segura</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<div class="wrapper">
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-wrap">
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false"
+            aria-controls="menu-list" aria-label="Abrir menú de ejercicios">☰</button>
+    <div class="brand">
+      <a href="../index.html">Portfolio</a>
+      <div class="brand-sub">Puesta en Producción Segura · Omar Akhamlich Cotado</div>
+    </div>
+    <nav id="menu-list"><ul><li><a href="ejercicio-01.html" data-ex="ejercicio-01">GIT Ariketa 5.1.1</a></li><li><a href="ejercicio-02.html" data-ex="ejercicio-02">GIT Ariketa 5.1.2</a></li><li><a href="ejercicio-03.html" data-ex="ejercicio-03">GIT Ariketa 5.1.3</a></li><li><a href="ejercicio-04.html" data-ex="ejercicio-04" class="active">GIT Ariketa 5.1.4 · Reto colaborativo</a></li><li><a href="ejercicio-05.html" data-ex="ejercicio-05">OWASP Top 10 · Tarea 1 (Sesión 1)</a></li><li><a href="ejercicio-06.html" data-ex="ejercicio-06">ASVS de OWASP · Aplicación a una aplicación web</a></li><li><a href="ejercicio-07.html" data-ex="ejercicio-07">Recurso de audio · Protege tu código de dependencias vulnerables</a></li><li><a href="ejercicio-08.html" data-ex="ejercicio-08">Práctica Docker 1 · Nginx e imagen Node.js</a></li></ul></nav>
+    <div class="theme-wrap">
+      <button class="theme-toggle" id="theme-toggle" aria-pressed="false"
+              aria-label="Cambiar entre tema claro y oscuro">🌓</button>
+    </div>
+  </div>
+</aside>
+
+<main id="contenido" tabindex="-1">
+  <header class="exercise-header"><div class="ej-meta"><span class="badge">Ejercicio 04</span><span class="source">Fuente: Github-Reto colaborativo.docx</span></div><h1>GIT Ariketa 5.1.4 · Reto colaborativo</h1><p class="lead">Contenido completo del documento original del ejercicio.</p></header>
+  <p><strong>GIT Ariketa 5.1.4</strong></p>
+<p><strong>RETO COLABORATIVO</strong></p>
+<p><em>1. Configuración de permisos e invitación</em></p>
+<p>Para comenzar el trabajo en pareja, el propietario del repositorio (uno de los dos) debe invitar al otro alumno como colaborador:</p>
+<p>• Accede a la configuración del repositorio en GitHub (Settings &gt; Collaborators).</p>
+<p><img src="../assets/img/ejercicio-04/ej-04-01.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>• Envía la invitación con permisos de escritura al usuario de GitHub de tu compañero.</p>
+<p>• El segundo alumno debe aceptar la invitación desde su correo electrónico o directamente en GitHub para poder publicar ramas y realizar cambios.</p>
+<p><img src="../assets/img/ejercicio-04/ej-04-02.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p><em>2. Desarrollo en ramas paralelas</em></p>
+<p>Cada alumno trabajará de forma aislada en su propia rama de trabajo: </p>
+<p>    •<strong> Alumno A ([ALUMNO A]):</strong></p>
+<p>        ◦ Crea la rama <em>feature/montana</em> a partir de main actualizada. </p>
+<p>    ◦ Edita ziber_localidades.txt añadiendo al final las localidades de montaña: Tolosa, Ordizia, Azpeitia. </p>
+<p>        ◦ Realiza el commit correspondiente y publica la rama en el repositorio remoto. </p>
+<p><img src="../assets/img/ejercicio-04/ej-04-03.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>    •<strong> Alumno B (Omar Akhamlich):</strong></p>
+<p>            ◦ Crea la rama <em>feature/costa</em> a partir de main actualizada. </p>
+<p><img src="../assets/img/ejercicio-04/ej-04-04.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>      ◦ Edita ziber_localidades.txt añadiendo al final las localidades costeras: Zarautz, Getaria, Mutriku. </p>
+<p><img src="../assets/img/ejercicio-04/ej-04-05.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>        ◦ Realiza el commit correspondiente y publica la rama en el repositorio remoto. </p>
+<p><img src="../assets/img/ejercicio-04/ej-04-06.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>          <img src="../assets/img/ejercicio-04/ej-04-07.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p><em>3. Protocolo de Pull Request y Code Review (Revisión de Código)</em></p>
+<p>Ambos alumnos deberán seguir un flujo formal de revisión: </p>
+<p><em>    1. Creación del Pull Request:</em></p>
+<p>            ◦ Cada alumno abre un Pull Request solicitando integrar su rama en main. </p>
+<p>         ◦ Completa la descripción indicando: qué cambios incluye, qué archivos modifica y qué comprobaciones se han hecho.</p>
+<p>       ◦ Asigna obligatoriamente a su compañero como Reviewer (revisor) y Assignee (responsable).</p>
+<p><img src="../assets/img/ejercicio-04/ej-04-08.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>          <img src="../assets/img/ejercicio-04/ej-04-09.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p><em>    2. Proceso de Revisión (Code Review):</em></p>
+<p>         ◦ El revisor accede a la pestaña Files changed del Pull Request de su compañero.</p>
+<p>         ◦ Revisa que las líneas agregadas sean correctas y que no haya errores de formato.</p>
+<p>        ◦ Añade al menos un comentario en una línea específica y deja una aprobación formal (Approve).</p>
+<p><img src="../assets/img/ejercicio-04/ej-04-10.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>          <img src="../assets/img/ejercicio-04/ej-04-11.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p><img src="../assets/img/ejercicio-04/ej-04-12.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p><img src="../assets/img/ejercicio-04/ej-04-13.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p><em>    3. Integración:</em></p>
+<p>        ◦ Una vez aprobado el Pull Request, el autor del cambio o el revisor ejecuta el Merge en GitHub y elimina la rama remota que ya ha sido integrada.</p>
+<p><img src="../assets/img/ejercicio-04/ej-04-14.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p><img src="../assets/img/ejercicio-04/ej-04-15.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p><img src="../assets/img/ejercicio-04/ej-04-16.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p><img src="../assets/img/ejercicio-04/ej-04-17.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>En caso del segundo <strong>merge</strong>, tras editar ambos usuarios el mismo archivo, existiran conflictos que se deben resolver antes de fusionar ambar ramas. De lo contrario, github no permitira proceder con la fusion de ramas. PAra ello, el usuario decidira que cambios mantener y descartar.</p>
+<p><strong>RETO DE CONFLICTO </strong></p>
+<p><em>1. Simulación del conflicto real</em></p>
+<p>Ambos alumnos editarán simultáneamente las mismas líneas del archivo para provocar una colisión de cambios que Git no pueda resolver de forma automática: </p>
+<p>    •<strong> Alumno A ([ALUMNO A])</strong>:</p>
+<p>        ◦ Crea una rama feature/edicion-alumno-a.</p>
+<p><img src="../assets/img/ejercicio-04/ej-04-18.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>        ◦ Modifica las líneas existentes de Donostia y Pasaia para incluir la provincia: </p>
+<p>          Donostia - Gipuzkoa</p>
+<p>          Pasaia - Gipuzkoa</p>
+<p>        ◦ Guarda, realiza el commit y publica la rama.</p>
+<p><img src="../assets/img/ejercicio-04/ej-04-19.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p><img src="../assets/img/ejercicio-04/ej-04-20.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>    • <strong>Alumno B (Omar AKhamlich):</strong></p>
+<p>        ◦ Crea una rama feature/edicion-alumno-b.</p>
+<p>        ◦ Modifica las mismas líneas de Donostia y Pasaia para incluir una descripción geográfica o funcional: </p>
+<p>          Donostia (capital)</p>
+<p>          Pasaia (costa)</p>
+<p>        ◦ Guarda, realiza el commit y publica la rama.</p>
+<p><img src="../assets/img/ejercicio-04/ej-04-21.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p><em>2. Secuencia de integración y detección del bloqueo</em></p>
+<p>    1. Alumno A abre su Pull Request, su compañero lo revisa, lo aprueba y se completa la integración (Merge) en la rama main. </p>
+<p><img src="../assets/img/ejercicio-04/ej-04-22.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>       <img src="../assets/img/ejercicio-04/ej-04-23.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>    2. Alumno B intenta abrir o integrar su Pull Request hacia main.</p>
+<p><img src="../assets/img/ejercicio-04/ej-04-24.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>    3. GitHub notificará que no es posible realizar la fusión automática debido a la existencia de un conflicto entre ramas (Merge Conflict).</p>
+<p>3. Resolución del conflicto</p>
+<p>    1. Alumno B debe sincronizar su entorno local descargando los últimos cambios de main e intentando fusionar main en su rama de trabajo (feature/edicion-alumno-b).</p>
+<p>    2. Al detectar el conflicto, Git insertará los marcadores de conflicto (&lt;&lt;&lt;&lt;&lt;&lt;&lt;, =======, &gt;&gt;&gt;&gt;&gt;&gt;&gt;).</p>
+<p><img src="../assets/img/ejercicio-04/ej-04-25.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>    3. Regla de resolución inteligente: No se debe descartar el trabajo de ninguno de los dos colaboradores. Se deben combinar ambos aportes para mantener toda la información útil. </p>
+<p>    4. El archivo editado manualmente debe quedar con esta estructura:</p>
+<p>       Donostia - Gipuzkoa (capital)</p>
+<p>       Pasaia - Gipuzkoa (costa)</p>
+<p><img src="../assets/img/ejercicio-04/ej-04-26.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>5. Alumno B elimina los marcadores, completa el commit de resolución del conflicto, actualiza su rama remota y finaliza la integración del Pull Request. </p>
+<p><img src="../assets/img/ejercicio-04/ej-04-27.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p><img src="../assets/img/ejercicio-04/ej-04-28.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p><strong>RETO FINAL Y AUDITORÍA DE CALIDAD</strong></p>
+<p><em>1. Estado final del fichero</em></p>
+<p>Al finalizar el trabajo en equipo, el archivo ziber_localidades.txt debe contener exactamente las 18 localidades correctamente integradas: </p>
+<p>Urnieta</p>
+<p>Andoain</p>
+<p>Irun</p>
+<p>Beasain</p>
+<p>Donostia - Gipuzkoa (capital)</p>
+<p>Pasaia - Gipuzkoa (costa)</p>
+<p>Lasarte-Oria</p>
+<p>Oiartzun</p>
+<p>Lesaka</p>
+<p>Ordizia</p>
+<p>Hondarribia</p>
+<p>Errenteria</p>
+<p>Hernani</p>
+<p>Tolosa</p>
+<p>Azpeitia</p>
+<p>Zarautz</p>
+<p>Getaria</p>
+<p>Mutriku</p>
+<p><img src="../assets/img/ejercicio-04/ej-04-29.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p><em>2. Auditoría integral del repositorio</em></p>
+<p>Antes de dar por concluida la práctica, el equipo debe verificar que se cumplen todos los requisitos de calidad exigidos: </p>
+<p>    • Sincronización: La rama principal (main) en local y en GitHub están en el mismo punto de la historia. </p>
+<p>      <img src="../assets/img/ejercicio-04/ej-04-30.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p><img src="../assets/img/ejercicio-04/ej-04-31.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>    • Limpieza: No existen marcas de conflicto olvidadas ni archivos temporales en el directorio. </p>
+<p><img src="../assets/img/ejercicio-04/ej-04-32.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>    • Seguridad: El archivo .gitignore está correctamente configurado e ignora archivos .env y secretos. </p>
+<p>      <img src="../assets/img/ejercicio-04/ej-04-33.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>    • Historial de cambios: El árbol del historial refleja con claridad el flujo de trabajo: creación de ramas, commits descriptivos, puntos de fusión (merges) y reversión de cambios. </p>
+<p>      <img src="../assets/img/ejercicio-04/ej-04-34.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>    • Trazabilidad colaborativa: Existen evidencias claras en GitHub de Pull Requests, comentarios de revisión de código y resolución de conflictos. </p>
+<p>      <img src="../assets/img/ejercicio-04/ej-04-35.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p><strong>CREAR UNA VERSIÓN Y PUBLICACIÓN DE RELEASE</strong></p>
+<p><em>1. Creación y publicación del Tag</em></p>
+<p>Una vez que el repositorio está auditado y validado en la rama main: </p>
+<p>    • Crea una etiqueta fija (tag) con la versión semántica <em>v1.0.0</em> para marcar el estado definitivo del proyecto. </p>
+<p><img src="../assets/img/ejercicio-04/ej-04-36.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>    • Sube la etiqueta al repositorio remoto para que quede registrada globalmente en GitHub. </p>
+<p><img src="../assets/img/ejercicio-04/ej-04-37.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p><em>2. Creación del Release oficial en GitHub</em></p>
+<p>Para documentar la entrega del proyecto de forma profesional:</p>
+<p>    1. En GitHub, navega hasta la sección Releases y selecciona la opción de crear un nuevo Release (Draft a new release).</p>
+<p>    2. Selecciona la etiqueta v1.0.0 previamente creada. </p>
+<p>    3. Establece como título del Release: Versión 1.0.0 - Sincronización y Resolución de Conflictos.</p>
+<p>    4. En la descripción incluye un Changelog (Registro de Cambios) formal con la siguiente estructura:</p>
+<p>## Release v1.0.0 — Práctica de Git y GitHub</p>
+<p>### Novedades</p>
+<p>* Integración de localidades iniciales y comarcas en `ziber_localidades.txt`.</p>
+<p>* Incorporación colaborativa de localidades de montaña y costa.</p>
+<p>### Correcciones y Seguridad</p>
+<p>* Reversión de cambios erróneos en el historial mediante `git revert`.</p>
+<p>* Implementación de `.gitignore` para la protección de variables de entorno y credenciales.</p>
+<p>* Resolución de conflictos de edición concurrente en localidades principales (Donostia/Pasaia).</p>
+<p>### Colaboradores</p>
+<p>* @AlumnoA</p>
+<p>* @AlumnoB</p>
+<p><img src="../assets/img/ejercicio-04/ej-04-38.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>    5. Publica el Release (Publish release) y comprueba que esté visible en la página principal del repositorio.</p>
+<p><img src="../assets/img/ejercicio-04/ej-04-39.png" alt="Imagen del ejercicio" loading="lazy"></p>
+  <nav class="nav-prev-next" aria-label="Navegación entre ejercicios"><a href="ejercicio-03.html" class="nav-link nav-prev">← Anterior: GIT Ariketa 5.1.3</a><span class="nav-sep">·</span><a href="ejercicio-05.html" class="nav-link nav-next">Siguiente: OWASP Top 10 · Tarea 1 (Sesión 1) →</a></nav>
+</main>
+</div>
+
+<footer class="site-footer">
+  <p>Sitio 100 % estático generado con <code>build.py</code>. HTML, CSS y JS vanilla,
+  sin dependencias externas ni CDNs.</p>
+</footer>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

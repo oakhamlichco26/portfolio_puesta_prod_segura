@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none';">
+<meta name="referrer" content="no-referrer">
+<title>OWASP Top 10 · Tarea 1 (Sesión 1) — Portfolio · Puesta en Producción Segura</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<div class="wrapper">
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-wrap">
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false"
+            aria-controls="menu-list" aria-label="Abrir menú de ejercicios">☰</button>
+    <div class="brand">
+      <a href="../index.html">Portfolio</a>
+      <div class="brand-sub">Puesta en Producción Segura · Omar Akhamlich Cotado</div>
+    </div>
+    <nav id="menu-list"><ul><li><a href="ejercicio-01.html" data-ex="ejercicio-01">GIT Ariketa 5.1.1</a></li><li><a href="ejercicio-02.html" data-ex="ejercicio-02">GIT Ariketa 5.1.2</a></li><li><a href="ejercicio-03.html" data-ex="ejercicio-03">GIT Ariketa 5.1.3</a></li><li><a href="ejercicio-04.html" data-ex="ejercicio-04">GIT Ariketa 5.1.4 · Reto colaborativo</a></li><li><a href="ejercicio-05.html" data-ex="ejercicio-05" class="active">OWASP Top 10 · Tarea 1 (Sesión 1)</a></li><li><a href="ejercicio-06.html" data-ex="ejercicio-06">ASVS de OWASP · Aplicación a una aplicación web</a></li><li><a href="ejercicio-07.html" data-ex="ejercicio-07">Recurso de audio · Protege tu código de dependencias vulnerables</a></li><li><a href="ejercicio-08.html" data-ex="ejercicio-08">Práctica Docker 1 · Nginx e imagen Node.js</a></li></ul></nav>
+    <div class="theme-wrap">
+      <button class="theme-toggle" id="theme-toggle" aria-pressed="false"
+              aria-label="Cambiar entre tema claro y oscuro">🌓</button>
+    </div>
+  </div>
+</aside>
+
+<main id="contenido" tabindex="-1">
+  <header class="exercise-header"><div class="ej-meta"><span class="badge">Ejercicio 05</span><span class="source">Fuente: Tarea 1 - OWASP10 - Omar Akhamlich.docx</span></div><h1>OWASP Top 10 · Tarea 1 (Sesión 1)</h1><p class="lead">Contenido completo del documento original del ejercicio.</p></header>
+  <p>SESIÓN 1 </p>
+<p>Lee con detenimiento el OWASP Top 10 completo <em>(Descripción, prevención y ejemplos). </em></p>
+<p>Actividad 1 </p>
+<p><strong>Coge las 10 categorías y realiza una breve descripción con tus palabras. </strong></p>
+<p>OWASP (Open Worldwide Application Security Project), es una comunidad abierta que genera un top 10 de vulnerabilidades más importantes en el sector tecnológico. Así, las organizaciones las tienen en cuenta y pueden usarla como referencia para sus proyectos. En el año 2025, estos son los top 10 y sus descripciones:</p>
+<table class="doc-table"><tbody><tr><th>Categoría</th><th>Descripción</th></tr><tr><td>A01:2025 - Pérdida de Control de Acceso</td><td>Un usuario puede ver o hacer cosas que no le corresponden. <br>Por ejemplo, cambiar el ID en una URL para ver los datos de otra persona, o entrar a un panel de administración sin ser administrador.</td></tr><tr><td>A02:2025 - Configuración de Seguridad Incorrecta</td><td>Mala configuración de los sistemas.<br>Algunos ejemplos son contraseñas por defecto, puertos abiertos, buckets públicos, mensajes de error con demasiados detalles o funciones innecesarias activadas.</td></tr><tr><td>A03:2025 - Fallas en la Cadena de Suministro de Software</td><td>Se usan dependencias, librerías, paquetes o herramientas de build que están comprometidos o son vulnerables. <br>También cuenta con un pipeline de CI/CD sin protección. El riesgo viene del código de terceros en el que confías sin verificarlo.</td></tr><tr><td>A4:2025 - Fallas Criptográficas</td><td>Los datos sensibles no se protegen bien. Puede ser porque no se cifran, porque se usan algoritmos débiles u obsoletos, porque se gestionan mal las claves o porque se guardan contraseñas sin un hash seguro.</td></tr><tr><td>A5:2025 - Inyección</td><td>La aplicación se confunde y trata datos del usuario como si fueran órdenes. Ocurre con SQL, comandos del sistema o XSS. <br>Se evita validando las entradas y usando consultas parametrizadas.</td></tr><tr><td>A6:2025 - Diseño Inseguro</td><td>Una mala decisión de arquitectura de software genera un diseño inseguro desde el principio.</td></tr><tr><td>A7:2025 - Fallas de Autenticación</td><td>El sistema no verifica bien quién eres. <br>Contraseñas débiles permitidas, ausencia de MFA, sesiones que no caducan, tokens predecibles o ataques de fuerza bruta sin freno.</td></tr><tr><td>A8:2025 - Fallas en la Integridad del Software o de los Datos</td><td>Se confía en código o datos sin comprobar que no han sido alterados. <br>Ejemplos: actualizaciones sin firma digital, deserialización insegura o scripts cargados de fuentes no verificadas.</td></tr><tr><td>A9:2025 - Fallas en el Registro, Alerta y Monitoreo de Seguridad</td><td>Si ocurre un ataque, nadie se entera a tiempo. Faltan logs útiles, no hay alertas, o nadie revisa lo que se registra. Así los ataques pasan días o meses sin detectarse.</td></tr><tr><td>A10:2025 - Manejo Inadecuado de Condiciones Excepcionales</td><td>La aplicación reacciona mal ante errores o situaciones raras. <br>Puede fallar de forma "abierta" y dar acceso, revelar información en un error, quedarse colgada, o no controlar entradas inesperadas ni fallos de recursos.</td></tr></tbody></table>
+<p><strong>Ahora tienes que relacionar las categorías de OWASP top 10 con estos casos (no debes utilizar la IA): </strong></p>
+<p>Por ejemplo: </p>
+<p>“La aplicación permite modificar /user.php?id=25 para acceder a otro usuario.” sería <em>A01:2025 - Broken Access Control, </em>porque el servidor le cree a cualquiera que cambie un número en la URL, sin verificar si esa persona de verdad tiene permiso para ver la información de los demás. </p>
+<p><strong>1. La base de datos del servidor utiliza la contraseña [CONTRASEÑA_EJEMPLO] por defecto y mantiene activo el usuario root accesible desde Internet. </strong></p>
+<p>Sería <em>A02:2025 - Security Misconfiguration</em>, debido a que se ha usado la contraseña por defecto, además del acceso root accesible por internet</p>
+<p><strong>2. Un formulario de inicio de sesión no limita el número de intentos fallidos, lo que permite a un atacante probar miles de combinaciones de clave por segundo mediante scripts. </strong></p>
+<p><em>A07:2025 - Authentication Failures, </em>permite la fuerza bruta en el acceso de inicio de sesión</p>
+<p><strong>3. Una función para generar vistas previas de enlaces permite ingresar </strong><strong>http://[IP_EJEMPLO]/admin </strong><strong>y logra escanear e interactuar con la red privada interna del servidor. </strong></p>
+<p><em>A01:2025 - Broken Access Control (SSRF)</em>, el servidor hace peticiones a una IP interna ([IP_EJEMPLO]) que el usuario no debería poder alcanzar.</p>
+<p><strong>4. Las contraseñas de los usuarios se almacenan en la base de datos cifradas con el algoritmo MD5 sin salt o codificadas en Base64. </strong></p>
+<p><em>A04:2025 - Cryptographic Failures</em>,  MD5 sin salt es débil, y Base64 es sólo codificación reversible, no cifrado.</p>
+<p><strong>5. En un cuadro de búsqueda de un e-commerce, el usuario escribe ' OR '1'='1 y el sistema muestra el catálogo completo con precios de coste y productos ocultos.</strong></p>
+<p>A05:2025 - Injection, el comentario se ejecuta como script en el navegador de otros usuarios, porque no se sanitiza ni se escapa la salida.</p>
+<p><strong> 6. Un usuario publica un comentario que contiene y este se ejecuta en el navegador de cualquiera que lea la entrada. </strong></p>
+<p>A05:2025 - Injection, un comentario que ejecuta código malicioso se considera inyección XSS</p>
+<p><strong>7. Un sitio web utiliza una versión de CMS de hace tres años con un complemento de formularios que contiene una vulnerabilidad conocida de ejecución remota de código (RCE) publicada en la base de datos CVE. </strong></p>
+<p>A03:2025 - Software Supply Chain Failures, se usa un CMS y un plugin desactualizados con un CVE conocido. </p>
+<p><strong>8. En un e-commerce, al modificar el valor oculto HTML del campo a 1 desde las herramientas de desarrollo del navegador, el servidor procesa la compra por $1 sin verificar la cifra en la base de datos. </strong></p>
+<p>A06:2025 - Insecure Design, El servidor confía en el precio enviado por el cliente. Falta la regla de negocio que lo valide contra la base de datos.</p>
+<p><strong>9. Ocurre una exfiltración masiva de datos durante el fin de semana, pero el equipo de seguridad no se entera hasta semanas después porque la aplicación no genera registros de fallos de autorización ni alertas de tráfico anómalo.</strong></p>
+<p>A09:2025 - Security Logging &amp; Alerting Failures, no hay registros ni alertas, así que la fuga pasó semanas sin detectarse.</p>
+<p><strong>10.Una aplicación de escritorio descarga e instala sus actualizaciones automáticas desde una dirección </strong><strong>http:// </strong><strong>sin cifrar y sin validar la firma digital del ejecutable. </strong></p>
+<p>A08:2025 - Software or Data Integrity Failures, la actualización llega por HTTP y sin firma digital, así que nada garantiza que no fue alterada.</p>
+<p><strong>11. Al introducir un carácter no válido en un formulario, la aplicación muestra una pantalla completa con la traza de error (stack trace) del lenguaje de programación, revelando rutas del servidor, versiones de software y consultas internas. </strong></p>
+<p>A10:2025 - Mishandling of Exceptional Conditions, la app gestiona mal el error y expone el stack trace. También podría contar como A02, pero A10 encaja mejor porque el origen es el manejo del error.</p>
+<p><strong>12. El enlace de "Restablecer contraseña" envía un token a través de la URL que se genera utilizando únicamente la hora exacta del servidor en formato timestamp, lo que permite a un atacante predecir la clave de recuperación. </strong></p>
+<p>A07:2025 - Authentication Failures, el token de recuperación es predecible porque se basa solo en el timestamp.</p>
+<p><strong>13.Un usuario con rol de cliente puede acceder al panel de administración escribiendo directamente /admin/dashboard en la barra de direcciones, ya que la app oculta el botón en el menú pero no valida los permisos en el servidor. </strong></p>
+<p>A01:2025 - Broken Access Control, solo se oculta el botón y el servidor no valida el rol. Es una escalada vertical de privilegios.</p>
+<p><strong>14.Un portal web permite subir imágenes de perfil, pero no valida la extensión del archivo, permitiendo subir un archivo .php o .aspx e invocarlo directamente para ejecutar comandos en el servidor. </strong></p>
+<p>A05:2025 - Injection, al subir un .php/.aspx se ejecutan comandos en el servidor. La causa es la falta de validación de la subida de archivos. También se puede argumentar A06.</p>
+<p><strong>15.Un servicio que descarga PDFs desde una URL introducida por el usuario recibe la dirección </strong><strong>http://[IP_EJEMPLO]/latest/meta-data/ </strong><strong>y devuelve las credenciales temporales de la infraestructura en la nube (AWS/Azure). </strong></p>
+<p>A01:2025 - Broken Access Control (SSRF), se accede al endpoint de metadatos de la nube ([IP_EJEMPLO]) y se obtienen credenciales.</p>
+<p><strong>16. Las cookies de sesión generadas tras el inicio de sesión no incluyen los atributos HttpOnly ni Secure, lo que permite que sean leídas por scripts maliciosos o interceptadas en redes Wi-Fi públicas. </strong></p>
+<p>A02:2025 - Security Misconfiguration, faltan los atributos HttpOnly y Secure de la cookie. También se puede relacionar con A07 por la sesión.</p>
+<p><strong>17. El directorio de control de versiones .git se encuentra expuesto públicamente en la raíz del servidor web (</strong><strong>https://sitio.com/.git/</strong><strong>), permitiendo descargar el código fuente completo del proyecto. </strong></p>
+<p>A02:2025 - Security Misconfiguration, el directorio .git está expuesto en el servidor web.</p>
+<p><strong>Actividad 2 — Nuestro primer mapa OWASP </strong></p>
+<p>Ahora vuelve a nuestra aplicación web. Construye la siguiente tabla:</p>
+<table class="doc-table"><tbody><tr><td>Categoria</td><td>¿Tenemos evidencia?</td><td>Hallazgo</td></tr><tr><td>Inyección</td><td><div class="cell-img"><img src="../assets/img/ejercicio-05/ej-05-01.png" alt="Captura de la tabla" loading="lazy"></div></td><td>El mismo código demuestra que no analiza el código antes de añadirlo, por lo que puede inyectar codigo malicioso</td></tr><tr><td>A02:2025 - Configuración de Seguridad Incorrecta</td><td><div class="cell-img"><img src="../assets/img/ejercicio-05/ej-05-02.png" alt="Captura de la tabla" loading="lazy"></div></td><td>Para eliminar la nota usa el id de la sesion, esta se puede modificar y por ende borrar la nota de otro usuario.</td></tr><tr><td>A6:2025 - Diseño Inseguro</td><td><div class="cell-img"><img src="../assets/img/ejercicio-05/ej-05-03.png" alt="Captura de la tabla" loading="lazy"></div></td><td>Una base de datos con id, jamas debe usar un id autoincremental, ya que seria facil reconocer el id de los usuarios. Es mucho mas viable un GUID</td></tr><tr><td></td><td></td><td></td></tr></tbody></table>
+<p>No necesitan encontrar una vulnerabilidad de cada categoría.</p>
+  <nav class="nav-prev-next" aria-label="Navegación entre ejercicios"><a href="ejercicio-04.html" class="nav-link nav-prev">← Anterior: GIT Ariketa 5.1.4 · Reto colaborativo</a><span class="nav-sep">·</span><a href="ejercicio-06.html" class="nav-link nav-next">Siguiente: ASVS de OWASP · Aplicación a una aplicación web →</a></nav>
+</main>
+</div>
+
+<footer class="site-footer">
+  <p>Sitio 100 % estático generado con <code>build.py</code>. HTML, CSS y JS vanilla,
+  sin dependencias externas ni CDNs.</p>
+</footer>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none';">
+<meta name="referrer" content="no-referrer">
+<title>ASVS de OWASP · Aplicación a una aplicación web — Portfolio · Puesta en Producción Segura</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<div class="wrapper">
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-wrap">
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false"
+            aria-controls="menu-list" aria-label="Abrir menú de ejercicios">☰</button>
+    <div class="brand">
+      <a href="../index.html">Portfolio</a>
+      <div class="brand-sub">Puesta en Producción Segura · Omar Akhamlich Cotado</div>
+    </div>
+    <nav id="menu-list"><ul><li><a href="ejercicio-01.html" data-ex="ejercicio-01">GIT Ariketa 5.1.1</a></li><li><a href="ejercicio-02.html" data-ex="ejercicio-02">GIT Ariketa 5.1.2</a></li><li><a href="ejercicio-03.html" data-ex="ejercicio-03">GIT Ariketa 5.1.3</a></li><li><a href="ejercicio-04.html" data-ex="ejercicio-04">GIT Ariketa 5.1.4 · Reto colaborativo</a></li><li><a href="ejercicio-05.html" data-ex="ejercicio-05">OWASP Top 10 · Tarea 1 (Sesión 1)</a></li><li><a href="ejercicio-06.html" data-ex="ejercicio-06" class="active">ASVS de OWASP · Aplicación a una aplicación web</a></li><li><a href="ejercicio-07.html" data-ex="ejercicio-07">Recurso de audio · Protege tu código de dependencias vulnerables</a></li><li><a href="ejercicio-08.html" data-ex="ejercicio-08">Práctica Docker 1 · Nginx e imagen Node.js</a></li></ul></nav>
+    <div class="theme-wrap">
+      <button class="theme-toggle" id="theme-toggle" aria-pressed="false"
+              aria-label="Cambiar entre tema claro y oscuro">🌓</button>
+    </div>
+  </div>
+</aside>
+
+<main id="contenido" tabindex="-1">
+  <header class="exercise-header"><div class="ej-meta"><span class="badge">Ejercicio 06</span><span class="source">Fuente: asvs-ejercicio_Omar_Akhamlich.docx</span></div><h1>ASVS de OWASP · Aplicación a una aplicación web</h1><p class="lead">Contenido completo del documento original del ejercicio.</p></header>
+  <p><strong>Ejercicio: Aplicación del ASVS de OWASP a una aplicación web sencilla </strong></p>
+<p><em><strong>Parte 1: Entendiendo el ASVS (Teoría) </strong></em></p>
+<p><strong>Tarea: </strong>Antes de usarlo, necesitas saber qué es. Responde brevemente a estas preguntas: </p>
+<p><em>1. ¿Cuál es el objetivo principal del ASVS de OWASP? </em></p>
+<p>El objetivo principal de ASVS (Application, Security, Verification, y Standard) es definir requisitos o estándares de seguridad para aplicaciones y servicios web. </p>
+<p><em>2. El ASVS se divide en tres niveles. En tus propias palabras, ¿cuál es la diferencia clave entre los niveles 1, 2 y 3? </em></p>
+<p>La razón por la que ASVS divide por niveles en base a el nivel de importancia empezando por bases que cubren vulnerabilidades críticas (nivel 1), hasta metodologías de defensa para un alto nivel de seguridad (nivel 3)</p>
+<p><em>3. Explora el ASVS más reciente en el sitio web oficial. Encuentra el Capítulo 1 (Codificación y Saneamiento) y el Capítulo 6 (Autenticación). Revisa algunos requisitos. ¿Qué observas sobre su redacción? </em></p>
+<p>Se puede observar que los requisitos del ASVS se redactan como afirmaciones verificables y breves: empiezan por "Verify that", cubren un solo control, indican el nivel y se centran en el resultado y no en la herramienta. Esa es la base de por qué sirven tanto para auditar como para convertirse en tests. Es decir, todos los capitulos estan escritos de manera como si fuera un checklist, para que los desarrolladores puedan consultarlo conforme </p>
+<p><em><strong>Parte 2: Análisis de un escenario (Práctica) </strong></em></p>
+<p>Imagine una sencilla aplicación web de “Notas” con las siguientes características: </p>
+<p>• Los usuarios pueden registrarse e iniciar sesión (<strong>register </strong>y <strong>login</strong><strong>). </strong></p>
+<p>• Los usuarios que hayan iniciado sesión pueden crear, ver, editar y eliminar sus propias notas ( <strong>create, view, edit, and delete). </strong></p>
+<p>• Hay un "Panel de administración" en /admin que muestra todos los usuarios y todas las notas de todos los usuarios. Solo los usuarios con el indicador <em>is_admin </em>activado en la base de datos pueden acceder a él. </p>
+<p>• La aplicación utiliza una base de datos SQL. </p>
+<p><strong>Fragmento de código vulnerable (pseudocódigo): </strong></p>
+<p># View a specific note </p>
+<p>@app.route('/note/&lt;note_id&gt;') </p>
+<p>def view_note(note_id): </p>
+<p>user = session.get('current_user') </p>
+<p># VULN: SQL Injection possible and no access control check! query = "SELECT * FROM notes WHERE id = " + note_id </p>
+<p>note = database.execute(query).fetchone() </p>
+<p>return render_template('note.html', note=note) </p>
+<p># Admin Panel </p>
+<p>@app.route('/admin') </p>
+<p>def admin_panel(): </p>
+<p># VULN: Only checks if user is logged in, not if they are an admin! if session.get('current_user'): </p>
+<p>users = database.get_all_users() </p>
+<p>notes = database.get_all_notes() </p>
+<p>return render_template('admin.html', users=users, notes=notes) else: </p>
+<p>return redirect('/login') </p>
+<p><em><strong>Parte 3: Aplicación de la lista de verificación ASVS </strong></em></p>
+<p><strong>Tarea: </strong>Tu trabajo consiste en desempeñar el papel de auditor de seguridad. Utilizando la tabla de contenidos de ASVS (ASVS Table of Contents), encuentra los requisitos que se infringen en el código anterior. Intenta encontrar el capítulo específico y el ID del requisito (p. ej., 2.2.1). </p>
+<p><strong>Pista: </strong>Céntrate en <strong>V1:Encoding and Sanitization, V6: Authentication, V7: Session management, V8: Authorization</strong>. </p>
+<table class="doc-table"><tbody><tr><th>Descripcion de la vulnerabilidad</th><th>Capitulo ASVS</th><th>Identificador del<br>requisito ASVS<br>(p.ej. 1.2.3)</th><th>¿Qué debería<br>hacer el código en<br>su lugar?</th></tr><tr><td>SQL Injection en<br>/note/&lt;note_id&gt;</td><td>V1: Encoding and Sanitization (V1.2 Injection Prevention)</td><td>1.2.4</td><td>Usar consultas parametrizadas</td></tr><tr><td>Missing Access<br>Control en<br>/note/&lt;note_id&gt;</td><td>V8: Authorization (V8.2 General Authorization Design)</td><td>8.2.2</td><td>Comprobar en el servidor que la nota pertenece al usuario autenticado, o que tiene permiso sobre ella. Si no, devolver 403 o 404.</td></tr><tr><td>Broken Access<br>Control en /admin</td><td>V8: Authorization (V8.2 General Authorization Design)</td><td>8.2.1</td><td>Aplicar autorización a nivel de función. Solo los roles con permiso explícito acceden a /admin, con denegación por defecto. Esa comprobación debe hacerse en el backend y no solo ocultando el enlace en la interfaz.</td></tr><tr><td>La autenticación<br>basada en sesión<br>solo se verifica en<br>cuanto a<br>existencia, no en<br>validez</td><td>V7: Session Management (V7.2 Fundamental Session Management Security)</td><td>7.2.1</td><td>Verificar el token de sesión en un servicio backend de confianza. Debe comprobar que existe, que no ha caducado ni ha sido invalidado, y que corresponde al usuario.</td></tr></tbody></table>
+<p>• <strong>¡Tu turno! </strong>Encuentra al menos un requisito más de otro capítulo que esta aplicación probablemente infrinja. (Ejemplo: ¿Es predecible la URL del panel de administración? ¡Consulta el Capítulo 2 sobre Arquitectura!) </p>
+<table class="doc-table"><tbody><tr><th>Descripcion de la vulnerabilidad</th><th>Capitulo ASVS</th><th>Identificador del<br>requisito ASVS<br>(p.ej. 1.2.3)</th><th>¿Qué debería<br>hacer el código en<br>su lugar?</th></tr><tr><td>Sin captura del fallo, mostraria el trace completo del error</td><td>V16 Security Logging and Error Handling (V16.5 Error Handling)</td><td>16.5.1</td><td>Aislar posibles casos con fallos y mostrar un mensaje de error generico.</td></tr></tbody></table>
+<p><em><strong>Parte 4: Desafío adicional: Cómo escribir una función segura </strong></em></p>
+<p><strong>Tarea: </strong>El gerente de producto desea una nueva función: los usuarios ahora pueden compartir una nota con otros usuarios generando un enlace para compartir. </p>
+<p>Utilizando el ASVS como guía, escribe una lista de consideraciones y requisitos de seguridad que se deberían implementar para que esta función sea segura. Consulta capítulos o requisitos específicos del ASVS. </p>
+<p><strong>Piensa en: </strong></p>
+<p><em>• </em><em>¿Cómo se genera el token (abc123-def456)? (V11: Criptografía) </em></p>
+<p>Deberia de cumplir el punto 11.5.1, donde se remarca que el generador de numeros aleatorios CSPRNG, debe ser de 128 bits de entropía</p>
+<p><em>• </em><em>¿Se puede adivinar el enlace? (V6: Autenticación)</em></p>
+<p> Según el punto 6.3.1, el enlace debería ser capaz de soportar ataques de fuerza bruta, para que no sea adivinable.</p>
+<p><em>• </em><em>¿Se puede revocar el enlace? (V8: Autorización) </em></p>
+<p>Solo el propietario de la nota debería poder crear o quitar enlaces siguiendo el punto 8.2.2, sin que se genere <strong>IDOR</strong> y <strong>BOLA</strong> (<strong>Insecure Direct Object Reference</strong> y <strong>Broken Object Level Authorization</strong>) . </p>
+<p><em>• </em><em>¿Se crean datos de sesión al ver el enlace compartido? (V7: Gestión de sesiones) 2</em></p>
+<p>Siguiendo el punto 7.2.5, no se debe crear una sesión para ver el enlace. Si hay login, emitir un token nuevo e invalidar el anterior.</p>
+  <nav class="nav-prev-next" aria-label="Navegación entre ejercicios"><a href="ejercicio-05.html" class="nav-link nav-prev">← Anterior: OWASP Top 10 · Tarea 1 (Sesión 1)</a><span class="nav-sep">·</span><a href="ejercicio-07.html" class="nav-link nav-next">Siguiente: Recurso de audio · Protege tu código de dependencias vulnerables →</a></nav>
+</main>
+</div>
+
+<footer class="site-footer">
+  <p>Sitio 100 % estático generado con <code>build.py</code>. HTML, CSS y JS vanilla,
+  sin dependencias externas ni CDNs.</p>
+</footer>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

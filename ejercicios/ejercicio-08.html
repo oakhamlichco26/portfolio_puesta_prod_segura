@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none';">
+<meta name="referrer" content="no-referrer">
+<title>Práctica Docker 1 · Nginx e imagen Node.js — Portfolio · Puesta en Producción Segura</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<div class="wrapper">
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-wrap">
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false"
+            aria-controls="menu-list" aria-label="Abrir menú de ejercicios">☰</button>
+    <div class="brand">
+      <a href="../index.html">Portfolio</a>
+      <div class="brand-sub">Puesta en Producción Segura · Omar Akhamlich Cotado</div>
+    </div>
+    <nav id="menu-list"><ul><li><a href="ejercicio-01.html" data-ex="ejercicio-01">GIT Ariketa 5.1.1</a></li><li><a href="ejercicio-02.html" data-ex="ejercicio-02">GIT Ariketa 5.1.2</a></li><li><a href="ejercicio-03.html" data-ex="ejercicio-03">GIT Ariketa 5.1.3</a></li><li><a href="ejercicio-04.html" data-ex="ejercicio-04">GIT Ariketa 5.1.4 · Reto colaborativo</a></li><li><a href="ejercicio-05.html" data-ex="ejercicio-05">OWASP Top 10 · Tarea 1 (Sesión 1)</a></li><li><a href="ejercicio-06.html" data-ex="ejercicio-06">ASVS de OWASP · Aplicación a una aplicación web</a></li><li><a href="ejercicio-07.html" data-ex="ejercicio-07">Recurso de audio · Protege tu código de dependencias vulnerables</a></li><li><a href="ejercicio-08.html" data-ex="ejercicio-08" class="active">Práctica Docker 1 · Nginx e imagen Node.js</a></li></ul></nav>
+    <div class="theme-wrap">
+      <button class="theme-toggle" id="theme-toggle" aria-pressed="false"
+              aria-label="Cambiar entre tema claro y oscuro">🌓</button>
+    </div>
+  </div>
+</aside>
+
+<main id="contenido" tabindex="-1">
+  <header class="exercise-header"><div class="ej-meta"><span class="badge">Ejercicio 08</span><span class="source">Fuente: Docker1.docx</span></div><h1>Práctica Docker 1 · Nginx e imagen Node.js</h1><p class="lead">Contenido completo del documento original del ejercicio.</p></header>
+  <p>Práctica Docker 1. Nginx e imagen Node.js Objetivos </p>
+<p><strong>· Diferenciar imagen y contenedor. </strong></p>
+<p>Una imagen es una plantilla donde se encuentran las instrucciones para montar el contenedor. El contenedor, es una instancia ejecutable aislada de la imagen.</p>
+<p><strong>· Descargar y ejecutar imágenes. Consultar estado, logs e inspección.</strong></p>
+<p> .<strong>Publicar puertos y montar carpetas. </strong></p>
+<p><strong>· Modificar la página que sirve Nginx. </strong></p>
+<p><strong>· Crear una imagen propia con un Dockerfile. </strong></p>
+<p>1. Comprobaciones y descarga </p>
+<p><em><strong>docker --version : </strong></em>Muestra la versión instalada de docker<img src="../assets/img/ejercicio-08/ej-08-01.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p><em><strong>docker compose version</strong></em><strong>:</strong> Muestra la versión de docker compose instalada</p>
+<p><em><strong>docker images</strong></em><em><strong>:</strong></em><em> </em>Muestra las plantillas instaladas de docker</p>
+<p><em><strong>docker pull nginx:alpine </strong></em><strong>:</strong> Descarga la plantilla desde dockerhub</p>
+<p><em>docker images </em></p>
+<p><strong>Responde: ¿qué muestra docker images? ¿Qué diferencia hay entre imagen y contenedor? </strong></p>
+<p>Docker images muestra todas las plantillas descargadas.Una imagen es una plantilla donde se encuentran las instrucciones para montar el contenedor. El contenedor, es una instancia ejecutable aislada de la imagen.</p>
+<p>2. Ejecutar Nginx </p>
+<p><em>docker run -d --name mi-nginx -p 8080:80 nginx:alpine </em></p>
+<p><img src="../assets/img/ejercicio-08/ej-08-02.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Abre http://localhost:8080. Después ejecuta: </p>
+<p><em>docker ps </em></p>
+<p><img src="../assets/img/ejercicio-08/ej-08-03.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p><em>docker ps -a </em></p>
+<p><img src="../assets/img/ejercicio-08/ej-08-03.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p><em>docker logs mi-nginx </em></p>
+<p><img src="../assets/img/ejercicio-08/ej-08-04.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p><em>docker inspect mi-nginx</em></p>
+<p><img src="../assets/img/ejercicio-08/ej-08-05.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Responde: ¿qué hacen -d y -p 8080:80? ¿Qué diferencia hay entre docker ps y docker ps -a? </p>
+<p>-d hace que se ejecute en segundo plano, -p redirecciona los puertos de nuestra máquina a los puertos de la virtual. La diferencia entre docker ps y ps -a es que el primero muestra los contenedores activos y el segundo muestra todos.</p>
+<p>3. Modificar la página desde dentro del contenedor </p>
+<p><em>docker exec -it mi-nginx sh </em></p>
+<p><em>ls -l /usr/share/nginx/html </em></p>
+<p><img src="../assets/img/ejercicio-08/ej-08-06.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Dentro del contenedor, sustituye la página de inicio: </p>
+<p>Actualiza http://localhost:8080. </p>
+<p><img src="../assets/img/ejercicio-08/ej-08-07.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Responde: ¿en qué ruta estaba el archivo? ¿El cambio está dentro del contenedor o en tu equipo? ¿Qué pasará si eliminas el contenedor y creas otro desde la imagen original? </p>
+<p>El archivo estaba en /usr/share/nginx/html dentro del contenedor. Si eliminara dicho contenedor y creo otro desde la imagen original, mis cambios no estarian.</p>
+<p>4. Servir una página propia desde el equipo </p>
+<p>Crea una página web de inicio en el editor y cambia el título, el texto y el color de fondo. Guarda. Elimina el contenedor anterior: </p>
+<p><em>docker rm -f mi-nginx </em></p>
+<p><img src="../assets/img/ejercicio-08/ej-08-08.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Desde la carpeta <em>01-nginx-y-node </em>que tienes en el curso de Moodle, monta la carpeta local en Nginx: </p>
+<p><em>docker run -d --name mi-nginx -p 8080:80 -v "$(pwd)/mi-web:/usr/share/nginx/html:ro" nginx:alpine </em></p>
+<p><img src="../assets/img/ejercicio-08/ej-08-09.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Responde: ¿qué hace <em>-v</em>? ¿Qué significa: ro? ¿En qué se diferencia este montaje de modificar el archivo dentro del contenedor?</p>
+<p>-v sirve para montar almacenamientos en el contenedor, mientras que ro es para que solo sea read only, es decir, no editable.</p>
+<p>5. Construir una imagen Node.js </p>
+<p>Entra en la carpeta <em>node-app </em>y revisa <em>app.js y Dockerfile</em>: </p>
+<p><em>cd node-app </em></p>
+<p><em>docker build -t mi-servidor-node:v1 . </em></p>
+<p><img src="../assets/img/ejercicio-08/ej-08-10.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p><em>docker images </em></p>
+<p><em>docker run -d --name servidor-node -p 3000:3000 mi-servidor-node:v1 </em></p>
+<p>Abre http://localhost:3000. Consulta: </p>
+<p><img src="../assets/img/ejercicio-08/ej-08-11.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p><em>docker history mi-servidor-node:v1 </em></p>
+<p><em>docker logs servidor-node </em></p>
+<p>Responde: ¿qué hacen FROM, WORKDIR, COPY, EXPOSE y CMD? </p>
+<table class="doc-table"><tbody><tr><td>Instrucción</td><td>Función</td></tr><tr><td>FROM</td><td>Define la imagen base sobre la que construyes tu imagen.</td></tr><tr><td>WORKDIR</td><td>Establece el directorio de trabajo dentro de la imagen para las instrucciones posteriores y para el proceso al arrancar. Lo crea si no existe.</td></tr><tr><td>COPY</td><td>Copia archivos del contexto de construcción a la imagen.</td></tr><tr><td>EXPOSE</td><td>Declara el puerto que se espera que utilice la aplicación.</td></tr><tr><td>CMD</td><td>Define el comando predeterminado que se ejecutará al iniciar un contenedor con esa imagen, no durante su construcción.</td></tr></tbody></table>
+<p>¿EXPOSE publica el puerto por sí solo?  No. EXPOSE<code> </code>3000 solo declara el puerto: no lo publica en tu ordenador ni hace que la aplicación empiece a escuchar en él</p>
+<p>¿Qué diferencia hay entre docker build y docker run? docker build construye una imagen a partir de un dockerfile. Docker run crea un contenedor a partir de una imagen</p>
+<p>Reto final </p>
+<p>Modifica app.js para incluir el nombre de tu equipo. Construye la versión 2 y sustituye el contenedor: </p>
+<p><em>docker build -t mi-servidor-node:v2 . </em></p>
+<p><em>docker rm -f servidor-node </em></p>
+<p><em>docker run -d --name servidor-node -p 3000:3000 mi-servidor-node:v2 </em></p>
+<p>Comprueba http://localhost:3000. </p>
+<p>Limpieza y entrega </p>
+<p><em>docker rm -f mi-nginx servidor-node </em></p>
+<p>Entrega capturas de Nginx original y modificado, tu mi-web/index.html, la app Node funcionando, el Dockerfile y las respuestas.</p>
+  <nav class="nav-prev-next" aria-label="Navegación entre ejercicios"><a href="ejercicio-07.html" class="nav-link nav-prev">← Anterior: Recurso de audio · Protege tu código de dependencias vulnerables</a><span class="nav-sep">·</span><span class="nav-link nav-next disabled">Siguiente: —</span></nav>
+</main>
+</div>
+
+<footer class="site-footer">
+  <p>Sitio 100 % estático generado con <code>build.py</code>. HTML, CSS y JS vanilla,
+  sin dependencias externas ni CDNs.</p>
+</footer>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

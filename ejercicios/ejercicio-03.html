@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none';">
+<meta name="referrer" content="no-referrer">
+<title>GIT Ariketa 5.1.3 — Portfolio · Puesta en Producción Segura</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<div class="wrapper">
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-wrap">
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false"
+            aria-controls="menu-list" aria-label="Abrir menú de ejercicios">☰</button>
+    <div class="brand">
+      <a href="../index.html">Portfolio</a>
+      <div class="brand-sub">Puesta en Producción Segura · Omar Akhamlich Cotado</div>
+    </div>
+    <nav id="menu-list"><ul><li><a href="ejercicio-01.html" data-ex="ejercicio-01">GIT Ariketa 5.1.1</a></li><li><a href="ejercicio-02.html" data-ex="ejercicio-02">GIT Ariketa 5.1.2</a></li><li><a href="ejercicio-03.html" data-ex="ejercicio-03" class="active">GIT Ariketa 5.1.3</a></li><li><a href="ejercicio-04.html" data-ex="ejercicio-04">GIT Ariketa 5.1.4 · Reto colaborativo</a></li><li><a href="ejercicio-05.html" data-ex="ejercicio-05">OWASP Top 10 · Tarea 1 (Sesión 1)</a></li><li><a href="ejercicio-06.html" data-ex="ejercicio-06">ASVS de OWASP · Aplicación a una aplicación web</a></li><li><a href="ejercicio-07.html" data-ex="ejercicio-07">Recurso de audio · Protege tu código de dependencias vulnerables</a></li><li><a href="ejercicio-08.html" data-ex="ejercicio-08">Práctica Docker 1 · Nginx e imagen Node.js</a></li></ul></nav>
+    <div class="theme-wrap">
+      <button class="theme-toggle" id="theme-toggle" aria-pressed="false"
+              aria-label="Cambiar entre tema claro y oscuro">🌓</button>
+    </div>
+  </div>
+</aside>
+
+<main id="contenido" tabindex="-1">
+  <header class="exercise-header"><div class="ej-meta"><span class="badge">Ejercicio 03</span><span class="source">Fuente: Ariketa_5.1.3.docx</span></div><h1>GIT Ariketa 5.1.3</h1><p class="lead">Contenido completo del documento original del ejercicio.</p></header>
+  <p>GIT Ariketa 5.1.3</p>
+<p>Crea en GitHub un repositorio privado llamado <em><strong>ariketa5.1.3-tuNombreApellido</strong></em>.</p>
+<p>Crea un <em><strong>README.md</strong></em> con un pequeña descripción.</p>
+<p>Descárgalo en tu repositorio local.</p>
+<p>Crea un documento llamado <em><strong>ziber_localidades.txt</strong></em> con el siguiente contenido: Urnieta, Andoain, Irun, Beasain, Donostia y Pasaia. </p>
+<p>Haz commit con el mensaje correspondiente.</p>
+<p>Añade al documento: Lasarte-Oria y Oiartzun.</p>
+<p>Comitea estos cambios con el mensaje correspondiente.</p>
+<p><img src="../assets/img/ejercicio-03/ej-03-01.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Sube los cambios a GitHub y comprueba que todo está correctamente.</p>
+<p><img src="../assets/img/ejercicio-03/ej-03-02.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Añade al fichero local: Lesaka.</p>
+<p>Comitea estos cambios con el mensaje correspondiente.</p>
+<p><img src="../assets/img/ejercicio-03/ej-03-03.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Desde GitHub añade Ordizia y haz commit.</p>
+<p><img src="../assets/img/ejercicio-03/ej-03-04.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Intenta actualizar tu repositorio local y el de GitHub. ¿Qué ocurre? </p>
+<p>Al haber cambio sen el mismo archivo tanto en remoto como local, git no sabe diferenciar cual es la version verdadera, por lo que deja un <strong>conflicto</strong>. </p>
+<p><img src="../assets/img/ejercicio-03/ej-03-05.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Resuelve el conflicto mediante los comandos necesarios para que tu repositorio local y el de GitHub estén actualizados/sincronizados correctamente.</p>
+<p>Usando git pull –<strong>rebase, </strong>git fuerza a traer los cambios, usando los caracteres &lt; = y &gt; para diferenciar ambos cambios de local y remoto. Asi, el usuario decidira con que cambio quedarse, eliminando dichos caracteres del archivo, para posteriormente commitear y pushear a remoto.</p>
+<p><img src="../assets/img/ejercicio-03/ej-03-06.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>En el documento <em><strong>ziber_localidades.txt</strong></em> debe aparecer lo siguiente:</p>
+<p><img src="../assets/img/ejercicio-03/ej-03-07.png" alt="Imagen del ejercicio" loading="lazy"><img src="../assets/img/ejercicio-03/ej-03-08.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<table class="doc-table"><tbody><tr><td>Urnieta<br>Andoain<br>Irun<br>Beasain<br>Donostia<br>Pasaia<br>Lasarte-Oria<br>Oiartzun<br>Lesaka<br>Ordizia</td></tr></tbody></table>
+<p><strong>EXTRA — TRABAJAR CON RAMAS</strong></p>
+<p>A partir de ahora evitaremos que todos los cambios se realicen directamente sobre main.</p>
+<p>Crea una nueva rama:</p>
+<table class="doc-table"><tbody><tr><td>git switch -c feature/comarcas<br>git branch</td></tr></tbody></table>
+<p><img src="../assets/img/ejercicio-03/ej-03-09.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Añade al fichero: Hondarribia, Errenteria, Hernani. Realiza un commit:</p>
+<p><img src="../assets/img/ejercicio-03/ej-03-10.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Publica la rama y accede a GitHub para comprobar que existe:</p>
+<p><img src="../assets/img/ejercicio-03/ej-03-11.png" alt="Imagen del ejercicio" loading="lazy"><img src="../assets/img/ejercicio-03/ej-03-12.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<table class="doc-table"><tbody><tr><th>Pregunta:<br>¿Qué diferencia hay entre main y feature/comarcas?<br>Ahora mismo, la feature/comarcas contiene cambios nuevos y por su nombre es una rama, que sera mergeada contra main y a posteriori, eliminada.</th></tr></tbody></table>
+<p>Desde GitHub crea un Pull Request: feature/comarcas → main. La descripción debe explicar qué cambios has realizado, qué archivos has modificado y qué pruebas has realizado.</p>
+<p>Antes de aceptar el Pull Request, revisa los cambios. Después realiza el merge.</p>
+<p><img src="../assets/img/ejercicio-03/ej-03-13.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Después del merge, vuelve a tu terminal:</p>
+<p>El repositorio debe quedar sincronizado.</p>
+<p><img src="../assets/img/ejercicio-03/ej-03-14.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Simula un error añadiendo al archivo: LOCALIDAD_INCORRECTA.</p>
+<p><img src="../assets/img/ejercicio-03/ej-03-15.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>El cambio es incorrecto. Investiga y utiliza git revert para deshacer el commit:</p>
+<p><img src="../assets/img/ejercicio-03/ej-03-16.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<table class="doc-table"><tbody><tr><th>Pregunta:<br>¿Por qué git revert es preferible a borrar o modificar el historial cuando trabajamos sobre una rama compartida? Git revert genera logs y commits del revert, por lo que se queda dentro del control de versiones en caso de querer recuperar el commit.</th></tr></tbody></table>
+<p>Crea un archivo config.env con contenido sensible (usuario, token, contraseña) y comprueba git status.</p>
+<table class="doc-table"><tbody><tr><td>GITHUB_USER=usuario<br>API_TOKEN=[VALOR_OCULTO]<br>PASSWORD=[VALOR_OCULTO]</td></tr></tbody></table>
+<p><img src="../assets/img/ejercicio-03/ej-03-17.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Crea o modifica .gitignore para que incluya:</p>
+<table class="doc-table"><tbody><tr><td>.env<br>*.env<br>*.key<br>*.pem<br>secrets/</td></tr></tbody></table>
+<p><img src="../assets/img/ejercicio-03/ej-03-17.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Comprueba nuevamente git status.</p>
+<p><img src="../assets/img/ejercicio-03/ej-03-18.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<table class="doc-table"><tbody><tr><th>Pregunta:<br>¿Por qué un archivo ignorado no aparece en git status? <br>Gracias a el archivo .gitignore, podemos hacer que git no suba y commitee ciertos archivos. Asi pudiendo proteger archivos con informacion sensible como usuarios, contraseña...</th></tr></tbody></table>
+<p>Imagina el siguiente error:</p>
+<table class="doc-table"><tbody><tr><td>git add config.env<br>git commit -m "Añade configuración"<br>git push</td></tr></tbody></table>
+<p>Posteriormente añades config.env al .gitignore.</p>
+<table class="doc-table"><tbody><tr><th>Pregunta:<br>¿Ha desaparecido el secreto del repositorio? Comprueba git log --all -- config.env e investiga qué debería hacer un equipo si una contraseña real hubiese sido publicada accidentalmente. <br>Al haber commiteado antes de añadir el gitignore, este archivo .env se encuentra en el historial de versiones.  Por lo que el equipo deberia primero cambiar la contraseña, y 2 borrar del historial dicho commit.</th></tr></tbody></table>
+  <nav class="nav-prev-next" aria-label="Navegación entre ejercicios"><a href="ejercicio-02.html" class="nav-link nav-prev">← Anterior: GIT Ariketa 5.1.2</a><span class="nav-sep">·</span><a href="ejercicio-04.html" class="nav-link nav-next">Siguiente: GIT Ariketa 5.1.4 · Reto colaborativo →</a></nav>
+</main>
+</div>
+
+<footer class="site-footer">
+  <p>Sitio 100 % estático generado con <code>build.py</code>. HTML, CSS y JS vanilla,
+  sin dependencias externas ni CDNs.</p>
+</footer>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none';">
+<meta name="referrer" content="no-referrer">
+<title>GIT Ariketa 5.1.1 — Portfolio · Puesta en Producción Segura</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<div class="wrapper">
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-wrap">
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false"
+            aria-controls="menu-list" aria-label="Abrir menú de ejercicios">☰</button>
+    <div class="brand">
+      <a href="../index.html">Portfolio</a>
+      <div class="brand-sub">Puesta en Producción Segura · Omar Akhamlich Cotado</div>
+    </div>
+    <nav id="menu-list"><ul><li><a href="ejercicio-01.html" data-ex="ejercicio-01" class="active">GIT Ariketa 5.1.1</a></li><li><a href="ejercicio-02.html" data-ex="ejercicio-02">GIT Ariketa 5.1.2</a></li><li><a href="ejercicio-03.html" data-ex="ejercicio-03">GIT Ariketa 5.1.3</a></li><li><a href="ejercicio-04.html" data-ex="ejercicio-04">GIT Ariketa 5.1.4 · Reto colaborativo</a></li><li><a href="ejercicio-05.html" data-ex="ejercicio-05">OWASP Top 10 · Tarea 1 (Sesión 1)</a></li><li><a href="ejercicio-06.html" data-ex="ejercicio-06">ASVS de OWASP · Aplicación a una aplicación web</a></li><li><a href="ejercicio-07.html" data-ex="ejercicio-07">Recurso de audio · Protege tu código de dependencias vulnerables</a></li><li><a href="ejercicio-08.html" data-ex="ejercicio-08">Práctica Docker 1 · Nginx e imagen Node.js</a></li></ul></nav>
+    <div class="theme-wrap">
+      <button class="theme-toggle" id="theme-toggle" aria-pressed="false"
+              aria-label="Cambiar entre tema claro y oscuro">🌓</button>
+    </div>
+  </div>
+</aside>
+
+<main id="contenido" tabindex="-1">
+  <header class="exercise-header"><div class="ej-meta"><span class="badge">Ejercicio 01</span><span class="source">Fuente: Ariketa_5.1.1.docx</span></div><h1>GIT Ariketa 5.1.1</h1><p class="lead">Contenido completo del documento original del ejercicio.</p></header>
+  <p>GIT Ariketa 5.1.1</p>
+<p>Crea la carpeta <em><strong>ariketa5.1.1-tuNombreApellido</strong></em> (ej: ariketa5.1.1-IgorGoikoetxea).</p>
+<p>Convierte esa carpeta en repositorio.</p>
+<p><img src="../assets/img/ejercicio-01/ej-01-01.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Dentro crea un <em><strong>README.md</strong></em> con el siguiente texto:</p>
+<p><img src="../assets/img/ejercicio-01/ej-01-02.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>¿Con qué comando se pueden ver los cambios? ¿Con qué color se muestran los cambios?</p>
+<p>git diff muestra los cambios realizados, en verde muestra las líneas añadidas y en rojo las eliminadas.</p>
+<p>También puede usarse git status, para ver que archivos no están en el estado stage.</p>
+<p><img src="../assets/img/ejercicio-01/ej-01-03.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Pasa el README.md a <em>stage.</em> ¿Con qué comando se puede ver el estado del fichero? ¿Con qué color aparece el fichero?</p>
+<p><img src="../assets/img/ejercicio-01/ej-01-04.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Borra el fichero README.md.</p>
+<p><img src="../assets/img/ejercicio-01/ej-01-05.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>¿Con qué comando recuperarías el fichero README.md?</p>
+<p><img src="../assets/img/ejercicio-01/ej-01-06.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Crea un primer commit con el siguiente mensaje: “README creado”.</p>
+<p><img src="../assets/img/ejercicio-01/ej-01-07.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>¿Con qué comando se puede visualizar la información de ese commit? Explica la información que aparece en la pantalla.</p>
+<p><img src="../assets/img/ejercicio-01/ej-01-08.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Con git show [hash_del_commit], un usuario puede encontrar la siguiente información del commit: Autor, fecha, mensaje del  commit e incluso que ha modificado dentro del archivo.</p>
+<p>Crea un <em><strong>index.html</strong></em>, pásalo <em>stage</em> y crea un segundo commit con el siguiente texto: “añadido un index.html”</p>
+<p><img src="../assets/img/ejercicio-01/ej-01-09.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Dentro del repositorio crea una nueva carpeta llamada <em><strong>logs</strong></em>. Dentro de esta carpeta crea los ficheros: <em><strong>hoy.log</strong></em> y <em><strong>historia.log</strong></em>. </p>
+<p><img src="../assets/img/ejercicio-01/ej-01-10.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>¿Cómo se puede hacer para que GIT no tenga en cuenta los ficheros .log?</p>
+<p>Usando el archivo .gitignore, aqui añades *.log y asi git dejara de rastrear TODOS los archivos .log. Hay que tener en cuenta que eso solo funciona una vez creado el archivo, si ya existe algun commit de algun log este no desaparecera.</p>
+<p>Comprueba que efectivamente GIT no tiene en cuenta los cambios realizados sobre  esos ficheros. Por ejemplo, haz un cambio sobre uno de los dos ficheros .log y ejecuta un git status.</p>
+<p><img src="../assets/img/ejercicio-01/ej-01-11.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>Borra de manera segura el fichero index.html y haz un commit con este cambio con su correspondiente mensaje.</p>
+<p><img src="../assets/img/ejercicio-01/ej-01-12.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p>¿Mediante qué comando/s se puede recuperar este fichero? Recuperálo y haz commit con el cambio.</p>
+<p><img src="../assets/img/ejercicio-01/ej-01-13.png" alt="Imagen del ejercicio" loading="lazy"></p>
+<p><img src="../assets/img/ejercicio-01/ej-01-14.png" alt="Imagen del ejercicio" loading="lazy"></p>
+  <nav class="nav-prev-next" aria-label="Navegación entre ejercicios"><span class="nav-link nav-prev disabled">Anterior: —</span><span class="nav-sep">·</span><a href="ejercicio-02.html" class="nav-link nav-next">Siguiente: GIT Ariketa 5.1.2 →</a></nav>
+</main>
+</div>
+
+<footer class="site-footer">
+  <p>Sitio 100 % estático generado con <code>build.py</code>. HTML, CSS y JS vanilla,
+  sin dependencias externas ni CDNs.</p>
+</footer>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>
